@@ -123,7 +123,7 @@ def aki_win(update: Update, context: CallbackContext):
     else:
         query.message.edit_media(
             InputMediaPhoto(
-                media=open('aki_pics/aki_defeat.jpg),
+                media=open('aki_pics/aki_defeat.png', 'rb'),
                 caption="bruh :("
             ),
             reply_markup=None
