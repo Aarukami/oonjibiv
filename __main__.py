@@ -52,7 +52,7 @@ def aki_play_cmd_handler(update: Update, context: CallbackContext) -> None:
     aki = akinator.Akinator()
     user_id = update.effective_user.id
     msg = update.message.reply_photo(
-        photo=open('aki_pics/aki_01.jpg', 'rb'),
+        photo=open('aki_pics/aki_01.jpg'),
         caption="Loading..."
     )
     updateTotalGuess(user_id, total_guess=1)
@@ -86,7 +86,7 @@ def aki_play_callback_handler(update: Update, context:CallbackContext) -> None:
     if aki.progression < 80:
         query.message.edit_media(
             InputMediaPhoto(
-                open(f'aki_pics/aki_0{randint(1,5)}.jpg', 'rb'),
+                open(f'aki_pics/aki_0{randint(1,5)}.jpg'),
                 caption=q,
             ),
             reply_markup=AKI_PLAY_KEYBOARD
@@ -97,7 +97,7 @@ def aki_play_callback_handler(update: Update, context:CallbackContext) -> None:
         aki.win()
         aki = aki.first_guess
         if aki['picture_path'] == 'none.jpg':
-            aki['absolute_picture_path'] = open('aki_pics/none.jpg', 'rb')
+            aki['absolute_picture_path'] = open('aki_pics/none.jpg')
         query.message.edit_media(
             InputMediaPhoto(media=aki['absolute_picture_path'],
             caption=f"It's {aki['name']} ({aki['description']})! Was I correct?"
@@ -114,7 +114,7 @@ def aki_win(update: Update, context: CallbackContext):
     if ans =='y':
         query.message.edit_media(
             InputMediaPhoto(
-                media=open('aki_pics/aki_win.jpg', 'rb'),
+                media=open('aki_pics/aki_win.jpg'),
                 caption="gg!"
             ),
             reply_markup=None
@@ -123,7 +123,7 @@ def aki_win(update: Update, context: CallbackContext):
     else:
         query.message.edit_media(
             InputMediaPhoto(
-                media=open('aki_pics/aki_defeat.jpg', 'rb'),
+                media=open('aki_pics/aki_defeat.jpg),
                 caption="bruh :("
             ),
             reply_markup=None
