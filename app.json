@@ -8,8 +8,8 @@
     "Akinator"
   ],
   "repository": "https://github.com/Aarukami/oonjibiv",
-  "website": "https://github.com/adenosinetp10",
-  "success_url": "https://t.me/atpnull",
+  "website": "https://github.com/Aarukami",
+  "success_url": "https://t.me/girl_lob",
   "env": {
     "aki_mongo_host": {
       "description": "Put your MONGODB url",
